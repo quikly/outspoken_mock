@@ -5,6 +5,7 @@ class CreateSmsJobLogs < ActiveRecord::Migration
       t.float         :duration
       t.integer       :status_code
       t.integer       :num_destinations
+      t.text          :job_xml
       t.timestamps
     end
 
