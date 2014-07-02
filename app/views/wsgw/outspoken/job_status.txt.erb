@@ -1,0 +1,10 @@
+job-request-id=<%= @job_request_id %>
+mqube-id=01fsuv93rq0gna24a5akn7p01303
+accepted-date=<%= @sms_job_log.created_at.utc.strftime("%m/%d/%y%l:%M:%S %p %Z") %>
+status-code=<%= @sms_job_log.status_code %>
+status-details=<%= @sms_job_log.status_details %>
+max-retries=0
+retry-delay-secs=0
+num-destinations-accepted=<%= @sms_job_log.num_destinations %>
+status-url=https://status.mobilemessenger.com/status/gws/0l342f4165ujn825v8heo57bcip2/SMS/2014062716/01fsuv93rq0gna24a5akn7p01303-<%= @job_request_id %>.xml
+receipt-url=https://status.mobilemessenger.com/status/gws/0l342f4165ujn825v8heo57bcip2/SMS/2014062716/01fsuv93rq0gna24a5akn7p01303-<%= @job_request_id %>-receipts.xml

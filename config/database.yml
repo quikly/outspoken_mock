@@ -1,0 +1,18 @@
+development:
+  adapter: postgresql
+  database: outspoken_mock_development
+  encoding: utf8
+  port: <%= ENV["BOXEN_POSTGRESQL_PORT"] || 5432 %>
+  template: template0
+
+test: &test
+  adapter: postgresql
+  database: outspoken_mock_test
+  encoding: utf8
+  port: <%= ENV["BOXEN_POSTGRESQL_PORT"] || 5432 %>
+  template: template0
+  min_messages: warning
+
+production:
+  url: <%= ENV["DATABASE_URL"] %>
+

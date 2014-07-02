@@ -1,0 +1,2 @@
+module Wsgw::OutspokenHelper
+end
