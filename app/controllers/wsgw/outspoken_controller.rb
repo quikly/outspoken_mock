@@ -13,7 +13,7 @@ class Wsgw::OutspokenController < ApplicationController
 
     status_code = (params[:random_failure] && rand(params[:random_failure].to_i) < 1) ? [2,3,5,6].sample : 0
 
-    if @sms_job_log = SmsJobLog.where(job_request_id: @job_request_id).take
+    if @sms_job_log = SmsJobLog.where(job_request_id: @job_request_id).order('created_at DESC').first
       # If job already exists, return this error code
       @sms_job_log.status_code = 4
     else
@@ -25,7 +25,7 @@ class Wsgw::OutspokenController < ApplicationController
 
   def check_job_status
     @job_request_id = params[:JobRequestID] or raise Outspoken::MissingJobRequestId
-    @sms_job_log = SmsJobLog.where(job_request_id: @job_request_id).take
+    @sms_job_log = SmsJobLog.where(job_request_id: @job_request_id).order('created_at DESC').first
     if @sms_job_log
       render :template => 'wsgw/outspoken/job_status.txt.erb', :layout => false
     else
