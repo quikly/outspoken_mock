@@ -11,9 +11,21 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 0) do
+ActiveRecord::Schema.define(version: 20140702145417) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "sms_job_logs", force: true do |t|
+    t.string   "job_request_id"
+    t.float    "duration"
+    t.integer  "status_code"
+    t.integer  "num_destinations"
+    t.text     "job_xml"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "sms_job_logs", ["job_request_id"], name: "index_sms_job_logs_on_job_request_id", using: :btree
 
 end
