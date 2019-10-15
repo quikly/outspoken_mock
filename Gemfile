@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
-ruby '2.0.0'
+ruby '2.5.3'
 
-gem 'rails', '4.1.1'
+gem 'rails', '4.2.11.1'
 gem 'pg'
 gem 'sass-rails', '~> 4.0.3'
 gem 'uglifier', '>= 1.3.0'
@@ -16,4 +16,4 @@ gem 'builder'
 gem 'spring',        group: :development
 gem 'unicorn'
 
-gem 'newrelic_rpm',                   '~> 3.8.0'
+gem 'newrelic_rpm'
